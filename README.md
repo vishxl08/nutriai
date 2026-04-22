@@ -1,24 +1,24 @@
-# NutriAI — Indian Nutrition Tracker 🥗💪
+# NutriAI — Indian Nutrition & Fitness Tracker 🥗💪
 
-Your personal AI-powered nutrition and fitness tracker with full Indian food database.
+Your personal AI-powered nutrition and fitness tracker with full Indian food database and daily goals.
 
 ---
 
 ## 🚀 Quick Start
 
-### Option 1 — Open Directly (Simplest)
-Just double-click `index.html` in your file manager or open it in Chrome/Firefox.
-
-### Option 2 — Local Server (Recommended)
+### Local Development
 ```bash
-# If you have Python installed:
-python -m http.server 8080
-# Then open: http://localhost:8080
+# Install dependencies
+pip install -r requirements.txt
 
-# Or with Node.js:
-npx serve .
-# Then open the URL shown
+# Run migrations
+python manage.py migrate
+
+# Start server
+python manage.py runserver
 ```
+
+Open http://127.0.0.1:8000 in your browser.
 
 ---
 
@@ -28,11 +28,11 @@ The AI food recognition requires a Groq API key.
 
 1. Go to [https://console.groq.com/keys](https://console.groq.com/keys) and create a free account
 2. Create an API key under "API Keys"
-3. Open the app → Login → Profile tab → "AI Configuration"
+3. Login to the app → Profile tab → "AI Configuration"
 4. Paste your API key and tap Save
 5. Now the 📸 Scan button will recognize any food photo!
 
-> **Note:** The API key is stored only in your browser's localStorage. Never share it.
+> **Note:** The API key is stored securely in your user profile.
 
 ---
 
@@ -44,6 +44,7 @@ The AI food recognition requires a Groq API key.
 - Water intake tracker (8 cups × 375ml)
 - Body weight logger with history
 - Today's meal log
+- **Daily Goal** - Set personal goals like "Today's PR 100kg Bench Press"
 
 ### 📸 AI Food Scanner
 - Upload any photo of Indian food
@@ -119,20 +120,22 @@ Macros auto-calculate from your body weight, height, age and gender.
 
 ---
 
-## 📱 Mobile Use
+## � Deployment
 
-The app is fully mobile-responsive. For the best experience:
-1. Open in Chrome on Android
-2. Tap ⋮ → "Add to Home Screen"
-3. Use it like a native app!
+### GitHub
+1. Create a new repository on GitHub
+2. Push this code to the repository
 
----
+### Vercel
+1. Connect your GitHub repo to Vercel
+2. Set environment variables:
+   - `DJANGO_SETTINGS_MODULE`: `nutriai_dj.settings`
+   - `SECRET_KEY`: Generate a new secret key
+   - `DEBUG`: `False`
+   - `DATABASE_URL`: Use a PostgreSQL database (Vercel doesn't support SQLite for persistent data)
+3. Deploy
 
-## 🔒 Privacy
-
-- **All data is stored locally** in your browser (localStorage)
-- No server, no accounts, no data sent anywhere except the Groq API for food recognition
-- API key stored locally, never transmitted to any server other than Groq
+For production, update `ALLOWED_HOSTS` in settings.py to include your Vercel domain.
 
 ---
 
@@ -140,13 +143,36 @@ The app is fully mobile-responsive. For the best experience:
 
 ```
 nutriai/
-├── index.html          ← Main app (open this)
-├── src/
-│   ├── styles.css      ← All styles
-│   ├── app.js          ← Main app logic
-│   ├── data/
-│   │   └── foods.js    ← Indian food database (300+ items)
-│   └── utils/
+├── manage.py
+├── db.sqlite3
+├── requirements.txt
+├── vercel.json
+├── nutriai_dj/
+│   ├── settings.py
+│   ├── urls.py
+│   └── wsgi.py
+├── tracker/
+│   ├── models.py
+│   ├── views.py
+│   ├── urls.py
+│   ├── admin.py
+│   ├── apps.py
+│   ├── tests.py
+│   ├── management/
+│   ├── migrations/
+│   ├── static/tracker/
+│   │   ├── css/styles.css
+│   │   ├── js/app.js
+│   │   └── js/nutrition.js
+│   └── templates/tracker/index.html
+└── README.md
+```
+
+---
+
+## 📝 License
+
+MIT License - feel free to use and modify!
 │       └── nutrition.js ← BMR/TDEE/macro calculations
 └── README.md
 ```
