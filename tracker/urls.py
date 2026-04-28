@@ -18,4 +18,5 @@ urlpatterns = [
     path('api/delete_goal', views.api_delete_goal, name='api_delete_goal'),
     path('api/search_food', views.api_search_food, name='api_search_food'),
     path('api/analyze_food', views.api_analyze_food, name='api_analyze_food'),
+    path('api/migrate', views.run_migrations, name='run_migrations'),
 ]

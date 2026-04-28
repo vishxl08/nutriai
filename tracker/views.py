@@ -2,6 +2,15 @@ import json
 from datetime import timedelta
 from django.shortcuts import render
 from django.contrib.auth.models import User
+from django.core.management import call_command
+
+def run_migrations(request):
+    """Temporary endpoint to run database migrations on Vercel."""
+    try:
+        call_command('migrate', interactive=False)
+        return JsonResponse({'status': 'success', 'message': 'Database tables created successfully!'})
+    except Exception as e:
+        return JsonResponse({'status': 'error', 'message': str(e)})
 from django.contrib.auth import authenticate
 from django.utils import timezone
 
