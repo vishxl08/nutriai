@@ -88,10 +88,12 @@ if db_url:
         'default': dj_database_url.parse(db_url, conn_max_age=600, conn_health_checks=True)
     }
 else:
+    # Use /tmp on Vercel to avoid Read-Only filesystem crash, otherwise use local directory
+    sqlite_path = '/tmp/db.sqlite3' if os.environ.get('VERCEL') == '1' else BASE_DIR / 'db.sqlite3'
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.sqlite3',
-            'NAME': BASE_DIR / 'db.sqlite3',
+            'NAME': sqlite_path,
         }
     }
 
