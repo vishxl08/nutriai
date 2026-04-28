@@ -1195,6 +1195,7 @@ function renderChart(type) {
       data: weekHistory.cal.map(v => (v === null ? null : Number(v))),
       kpi: () => weekHistory.cal[6] || 0,
       badge: () => `Goal ${goalConfig.cal} kcal`,
+      chartType: 'bar'
     },
     protein: {
       title: 'Protein',
@@ -1204,6 +1205,7 @@ function renderChart(type) {
       data: weekHistory.prot.map(v => (v === null ? null : Number(v))),
       kpi: () => weekHistory.prot[6] || 0,
       badge: () => `Goal ${goalConfig.p} g`,
+      chartType: 'bar'
     },
     weight: {
       title: 'Weight',
@@ -1213,6 +1215,7 @@ function renderChart(type) {
       data: weekHistory.weight.map(v => (v === null ? null : Number(v))),
       kpi: () => (weekHistory.weight[6] ?? null),
       badge: () => 'Last 7 days',
+      chartType: 'line'
     },
     water: {
       title: 'Water',
@@ -1222,6 +1225,7 @@ function renderChart(type) {
       data: weekHistory.water.map(v => (v === null ? null : Number(v) / 1000)),
       kpi: () => ((weekHistory.water[6] || 0) / 1000),
       badge: () => `Goal ${((goalConfig.water || 3000) / 1000).toFixed(1)} L`,
+      chartType: 'bar'
     },
   };
 
@@ -1262,7 +1266,7 @@ function renderChart(type) {
 
   const opts = {
     chart: {
-      type: 'area',
+      type: d.chartType,
       height: 240,
       toolbar: { show: false },
       zoom: { enabled: false },
@@ -1270,6 +1274,9 @@ function renderChart(type) {
       fontFamily: 'DM Sans, system-ui, -apple-system, Segoe UI, Roboto, Arial',
       foreColor: colors.text2,
     },
+    plotOptions: d.chartType === 'bar' ? {
+      bar: { borderRadius: 6, columnWidth: '45%' }
+    } : {},
     grid: {
       borderColor: colors.border,
       strokeDashArray: 4,
@@ -1277,8 +1284,8 @@ function renderChart(type) {
     },
     colors: [d.color],
     dataLabels: { enabled: false },
-    stroke: { curve: 'smooth', width: 3 },
-    fill: {
+    stroke: d.chartType === 'line' ? { curve: 'smooth', width: 4 } : { show: false },
+    fill: d.chartType === 'line' ? {
       type: 'gradient',
       gradient: {
         shadeIntensity: 0.6,
@@ -1286,7 +1293,7 @@ function renderChart(type) {
         opacityTo: 0.02,
         stops: [0, 70, 100],
       },
-    },
+    } : { type: 'solid', opacity: 0.9 },
     markers: {
       size: 4,
       strokeWidth: 2,

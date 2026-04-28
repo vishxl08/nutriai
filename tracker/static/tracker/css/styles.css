@@ -33,15 +33,15 @@ body[data-theme="dark"]{
   --bg3:#1A1A24;
   --card:#1E1E2E;
   --card2:#252535;
-  --accent:#00E5A0;
-  --accent2:#FF6B35;
-  --accent3:#7B61FF;
+  --accent:#A78BFA;
+  --accent2:#EC4899;
+  --accent3:#8B5CF6;
   --blue:#4DCFFF;
   --text:#F0F0F5;
   --text2:#9090A8;
   --text3:#5A5A70;
-  --border:rgba(255,255,255,0.07);
-  --border2:rgba(255,255,255,0.12);
+  --border:rgba(139,92,246,0.15);
+  --border2:rgba(139,92,246,0.22);
   --shadow: 0 20px 60px rgba(0,0,0,0.50);
   --shadow2: 0 10px 30px rgba(0,0,0,0.35);
 }
@@ -124,7 +124,7 @@ body{
 }
 .auth-input{
   width:100%;background:var(--bg3);border:1px solid var(--border);
-  border-radius:16px;padding:14px 16px;color:var(--text);
+  border-radius:20px;padding:14px 16px;color:var(--text);
   font-family:'DM Sans',sans-serif;font-size:15px;outline:none;
   transition:border-color 0.2s;
 }
@@ -144,14 +144,14 @@ select.auth-input{-webkit-appearance:none;-moz-appearance:none;appearance:none;c
 
 .btn-primary{
   width:100%;background:var(--accent);color:#fff;border:none;
-  border-radius:16px;padding:15px;font-family:'Syne',sans-serif;
+  border-radius:20px;padding:15px;font-family:'Syne',sans-serif;
   font-size:16px;font-weight:700;cursor:pointer;transition:all 0.2s;margin-top:8px;
 }
 .btn-primary:hover{filter:brightness(1.1);transform:translateY(-1px)}
 .btn-primary:active{transform:translateY(0)}
 .btn-secondary{
   width:100%;background:var(--card);color:var(--text);border:1px solid var(--border);
-  border-radius:16px;padding:15px;font-family:'Syne',sans-serif;
+  border-radius:20px;padding:15px;font-family:'Syne',sans-serif;
   font-size:16px;font-weight:700;cursor:pointer;transition:all 0.2s;
 }
 .btn-secondary:hover{background:var(--bg3);border-color:var(--accent);transform:translateY(-1px)}
@@ -185,7 +185,7 @@ select.auth-input{-webkit-appearance:none;-moz-appearance:none;appearance:none;c
 
 /* STREAK */
 .streak-bar{
-  background:var(--card);border-radius:20px;padding:16px 20px;
+  background:var(--card);border-radius:24px;padding:16px 20px;
   border:1px solid var(--border);
   display:flex;align-items:center;justify-content:space-around;
   margin-bottom:20px;
@@ -209,7 +209,7 @@ select.auth-input{-webkit-appearance:none;-moz-appearance:none;appearance:none;c
 /* MACRO RING */
 .macro-card{
   background:var(--card);border:1px solid var(--border);
-  border-radius:24px;padding:20px;display:flex;align-items:center;gap:24px;
+  border-radius:28px;padding:20px;display:flex;align-items:center;gap:24px;
   margin-bottom:14px;
   box-shadow:var(--shadow2);
 }
@@ -232,7 +232,7 @@ select.auth-input{-webkit-appearance:none;-moz-appearance:none;appearance:none;c
 /* WATER */
 .water-card{
   background:var(--card);border:1px solid var(--border);
-  border-radius:24px;padding:18px 20px;margin-bottom:14px;
+  border-radius:28px;padding:18px 20px;margin-bottom:14px;
   box-shadow:var(--shadow2);
 }
 .water-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:14px}
@@ -254,7 +254,7 @@ select.auth-input{-webkit-appearance:none;-moz-appearance:none;appearance:none;c
 /* SCAN */
 .scan-btn{
   background:linear-gradient(135deg,rgba(139,92,246,0.12),rgba(167,139,250,0.10));
-  border:1px solid rgba(139,92,246,0.18);border-radius:24px;padding:22px;
+  border:1px solid rgba(139,92,246,0.18);border-radius:28px;padding:22px;
   display:flex;align-items:center;gap:16px;cursor:pointer;transition:all 0.2s;
   margin-bottom:6px;
   box-shadow:var(--shadow2);
@@ -271,7 +271,7 @@ select.auth-input{-webkit-appearance:none;-moz-appearance:none;appearance:none;c
 
 /* MEALS */
 .meal-item{
-  background:var(--card);border:1px solid var(--border);border-radius:20px;
+  background:var(--card);border:1px solid var(--border);border-radius:24px;
   padding:14px 16px;margin-bottom:10px;display:flex;align-items:center;gap:14px;
   animation:fadeIn 0.3s ease;
   box-shadow:0 10px 26px rgba(139,92,246,0.06);
@@ -288,7 +288,7 @@ select.auth-input{-webkit-appearance:none;-moz-appearance:none;appearance:none;c
 .empty-state{color:var(--text3);font-size:14px;text-align:center;padding:24px 0;background:var(--card);border-radius:14px;border:1px solid var(--border)}
 
 /* WEIGHT */
-.weight-card{background:var(--card);border:1px solid var(--border);border-radius:24px;padding:20px;margin-bottom:16px;box-shadow:var(--shadow2)}
+.weight-card{background:var(--card);border:1px solid var(--border);border-radius:28px;padding:20px;margin-bottom:16px;box-shadow:var(--shadow2)}
 
 /* ===== GOALS ===== */
 .goal-item{
@@ -314,13 +314,13 @@ select.auth-input{-webkit-appearance:none;-moz-appearance:none;appearance:none;c
 .weight-input-row{display:flex;gap:10px}
 .weight-input{
   flex:1;background:var(--bg3);border:1px solid var(--border);
-  border-radius:16px;padding:12px 14px;color:var(--text);
+  border-radius:20px;padding:12px 14px;color:var(--text);
   font-size:15px;font-family:'DM Sans',sans-serif;outline:none;transition:border 0.2s;
 }
 .weight-input:focus{border-color:var(--accent)}
 .weight-log-btn{
   background:var(--accent);color:#fff;border:none;
-  border-radius:16px;padding:12px 20px;font-weight:700;cursor:pointer;
+  border-radius:20px;padding:12px 20px;font-weight:700;cursor:pointer;
   font-family:'Syne',sans-serif;font-size:14px;white-space:nowrap;
 }
 .weight-log-btn:hover{filter:brightness(1.1)}
@@ -341,7 +341,7 @@ select.auth-input{-webkit-appearance:none;-moz-appearance:none;appearance:none;c
 .search-wrap{position:relative;margin-bottom:14px}
 .search-input{
   width:100%;background:var(--card);border:1px solid var(--border);
-  border-radius:18px;padding:14px 16px 14px 46px;color:var(--text);
+  border-radius:20px;padding:14px 16px 14px 46px;color:var(--text);
   font-size:15px;font-family:'DM Sans',sans-serif;outline:none;transition:border 0.2s;
   box-shadow:0 10px 26px rgba(139,92,246,0.05);
 }
@@ -349,7 +349,7 @@ select.auth-input{-webkit-appearance:none;-moz-appearance:none;appearance:none;c
 .search-icon{position:absolute;left:15px;top:50%;transform:translateY(-50%);color:var(--text3);font-size:18px}
 .food-result{
   background:var(--card);border:1px solid var(--border);
-  border-radius:18px;padding:14px 16px;margin-bottom:8px;
+  border-radius:20px;padding:14px 16px;margin-bottom:8px;
   cursor:pointer;transition:all 0.15s;
   display:flex;justify-content:space-between;align-items:center;
   box-shadow:0 10px 26px rgba(139,92,246,0.05);
@@ -364,7 +364,7 @@ select.auth-input{-webkit-appearance:none;-moz-appearance:none;appearance:none;c
 
 /* WORKOUT */
 .workout-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin-top:14px}
-.workout-stat{background:var(--bg3);border-radius:18px;padding:14px;text-align:center}
+.workout-stat{background:var(--bg3);border-radius:20px;padding:14px;text-align:center}
 .workout-stat-num{font-family:'Syne',sans-serif;font-size:22px;font-weight:800}
 .workout-stat-label{font-size:11px;color:var(--text3);text-transform:uppercase;letter-spacing:0.5px;margin-top:3px}
 .add-exercise-form{border-top:1px solid var(--border);margin-top:16px;padding-top:4px}
@@ -378,7 +378,7 @@ select.auth-input{-webkit-appearance:none;-moz-appearance:none;appearance:none;c
   font-family:'DM Sans',sans-serif;
 }
 .chart-tab.active{background:color-mix(in srgb, var(--accent) 14%, transparent);border-color:color-mix(in srgb, var(--accent) 55%, var(--border));color:var(--accent)}
-.chart-card{background:var(--card);border:1px solid var(--border);border-radius:24px;padding:16px 14px 12px;box-shadow:var(--shadow2)}
+.chart-card{background:var(--card);border:1px solid var(--border);border-radius:28px;padding:16px 14px 12px;box-shadow:var(--shadow2)}
 .chart-head{display:flex;align-items:flex-end;justify-content:space-between;gap:12px;margin-bottom:10px;padding:4px 6px 0}
 .chart-kpi{display:flex;flex-direction:column;gap:2px}
 .chart-kpi .label{font-size:11px;color:var(--text3);text-transform:uppercase;letter-spacing:0.5px}
@@ -409,7 +409,7 @@ select.auth-input{-webkit-appearance:none;-moz-appearance:none;appearance:none;c
 /* PROFILE */
 .profile-header{
   background:var(--card);border:1px solid var(--border);
-  border-radius:24px;padding:24px;text-align:center;margin-bottom:20px;
+  border-radius:28px;padding:24px;text-align:center;margin-bottom:20px;
 }
 .big-avatar{
   width:72px;height:72px;border-radius:50%;
@@ -427,11 +427,11 @@ select.auth-input{-webkit-appearance:none;-moz-appearance:none;appearance:none;c
   text-transform:uppercase;letter-spacing:0.5px;
 }
 .stats-row{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin-top:16px}
-.stat-box{background:var(--bg3);border-radius:16px;padding:14px;text-align:center}
+.stat-box{background:var(--bg3);border-radius:20px;padding:14px;text-align:center}
 .stat-box-num{font-family:'Syne',sans-serif;font-size:18px;font-weight:700}
 .stat-box-label{font-size:11px;color:var(--text3);margin-top:2px;text-transform:uppercase;letter-spacing:0.3px}
 
-.settings-list{background:var(--card);border:1px solid var(--border);border-radius:24px;overflow:hidden;margin-bottom:16px}
+.settings-list{background:var(--card);border:1px solid var(--border);border-radius:28px;overflow:hidden;margin-bottom:16px}
 .settings-item{
   display:flex;align-items:center;justify-content:space-between;
   padding:16px 20px;border-bottom:1px solid var(--border);
@@ -478,7 +478,7 @@ select.auth-input{-webkit-appearance:none;-moz-appearance:none;appearance:none;c
 .nav-item{
   display:flex;flex-direction:column;align-items:center;gap:3px;
   cursor:pointer;color:var(--text3);transition:all 0.2s;
-  padding:6px 12px;border-radius:16px;
+  padding:6px 12px;border-radius:20px;
 }
 .nav-item.active{color:var(--accent)}
 .nav-item:hover{background:rgba(255,255,255,0.04)}
@@ -498,7 +498,7 @@ select.auth-input{-webkit-appearance:none;-moz-appearance:none;appearance:none;c
 }
 .modal-overlay.open{display:flex}
 .modal-sheet{
-  background:var(--bg2);border-radius:32px 32px 0 0;
+  background:var(--bg2);border-radius:36px 36px 0 0;
   width:100%;max-width:520px;
   padding:24px 24px 40px;border-top:1px solid var(--border);
   max-height:92vh;overflow-y:auto;position:relative;
@@ -516,7 +516,7 @@ select.auth-input{-webkit-appearance:none;-moz-appearance:none;appearance:none;c
 
 /* UPLOAD ZONE */
 .upload-zone{
-  border:2px dashed var(--border2);border-radius:22px;
+  border:2px dashed var(--border2);border-radius:28px;
   padding:36px 20px;text-align:center;cursor:pointer;
   transition:all 0.2s;background:var(--card);margin-bottom:14px;
   box-shadow:var(--shadow2);
@@ -535,7 +535,7 @@ select.auth-input{-webkit-appearance:none;-moz-appearance:none;appearance:none;c
 .ai-food-name{font-family:'Syne',sans-serif;font-size:20px;font-weight:800;margin-bottom:4px}
 .ai-portion{font-size:13px;color:var(--text2);margin-bottom:14px}
 .ai-macros{display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:8px;margin-bottom:4px}
-.ai-macro{background:var(--bg3);border-radius:16px;padding:12px;text-align:center}
+.ai-macro{background:var(--bg3);border-radius:20px;padding:12px;text-align:center}
 .ai-macro-num{font-family:'Syne',sans-serif;font-size:18px;font-weight:700}
 .ai-macro-label{font-size:10px;color:var(--text3);margin-top:2px;text-transform:uppercase;letter-spacing:0.3px}
 .ai-ingredients{margin-top:14px;padding-top:14px;border-top:1px solid var(--border)}
@@ -546,7 +546,7 @@ select.auth-input{-webkit-appearance:none;-moz-appearance:none;appearance:none;c
 }
 .add-meal-btn{
   width:100%;background:var(--accent);color:#fff;border:none;
-  border-radius:16px;padding:14px;font-family:'Syne',sans-serif;
+  border-radius:20px;padding:14px;font-family:'Syne',sans-serif;
   font-size:15px;font-weight:700;cursor:pointer;margin-top:14px;transition:all 0.2s;
 }
 .add-meal-btn:hover{filter:brightness(1.1)}
@@ -604,12 +604,17 @@ input[type=range]::-webkit-slider-thumb{
 
 /* ===== WATER INTAKE BOARD ===== */
 .water-board {
-  background: var(--card);
-  border: 1px solid var(--border);
-  border-radius: 20px;
-  padding: 20px;
+  background: linear-gradient(135deg, rgba(139,92,246,0.05), rgba(61,139,255,0.05));
+  backdrop-filter: blur(12px);
+  border: 1px solid var(--border2);
+  border-radius: 28px;
+  padding: 24px;
   margin-bottom: 20px;
-  box-shadow: var(--shadow2);
+  box-shadow: 0 15px 35px rgba(139,92,246,0.1);
+  transition: transform 0.3s ease;
+}
+.water-board:hover {
+  transform: translateY(-2px);
 }
 
 .water-progress-info {
